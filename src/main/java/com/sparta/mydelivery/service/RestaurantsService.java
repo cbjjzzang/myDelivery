@@ -6,6 +6,8 @@ import com.sparta.mydelivery.repository.RestaurantsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class RestaurantsService {
@@ -19,5 +21,9 @@ public class RestaurantsService {
         if(restaurantsDto.getDeliveryFee() % 500 != 0) throw new IllegalArgumentException("배달비는 500원 단위로 입력해주세요.");
         Restaurants restaurants = new Restaurants(restaurantsDto);
         return restaurantsRepository.save(restaurants);
+    }
+
+    public List<Restaurants> showRestaurants() {
+        return restaurantsRepository.findAll();
     }
 }
