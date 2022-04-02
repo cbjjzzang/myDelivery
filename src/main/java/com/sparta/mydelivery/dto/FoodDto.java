@@ -9,5 +9,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FoodDto {
     private String name;
-    private Long price;
+    private int price;
 }

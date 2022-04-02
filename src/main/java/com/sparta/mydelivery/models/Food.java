@@ -1,6 +1,7 @@
 package com.sparta.mydelivery.models;
 
 import com.sparta.mydelivery.dto.FoodDto;
+import lombok.CustomLog;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,21 +15,20 @@ import javax.persistence.*;
 public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column
     private String name;
 
     @Column
-    private Long price;
+    private int price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "RestaurantsId")
-    private Restaurants restaurants;
+    @Column
+    private Long restaurantsId;
 
-    public Food(FoodDto foodDto, Restaurants restaurants){
+    public Food(FoodDto foodDto, Long restaurantsId){
         this.name = foodDto.getName();
         this.price = foodDto.getPrice();
-        this.restaurants = restaurants;
+        this.restaurantsId = restaurantsId;
     }
 }
