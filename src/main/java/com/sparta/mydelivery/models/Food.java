@@ -23,7 +23,7 @@ public class Food {
     private Long price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Restaurants_Id")
+    @JoinColumn(name = "RestaurantsId")
     private Restaurants restaurants;
 
     public Food(FoodDto foodDto, Restaurants restaurants){

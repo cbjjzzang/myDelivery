@@ -2,7 +2,7 @@ package com.sparta.mydelivery.controller;
 
 import com.sparta.mydelivery.dto.FoodDto;
 import com.sparta.mydelivery.dto.RestaurantsDto;
-import com.sparta.mydelivery.models.Food;
+import com.sparta.mydelivery.dto.ShowMenuDto;
 import com.sparta.mydelivery.models.Restaurants;
 import com.sparta.mydelivery.service.RestaurantsService;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +29,11 @@ public class RestaurantsController {
     @PostMapping("/restaurant/{restaurantId}/food/register")
     public void registerFood(@PathVariable Long restaurantId, @RequestBody List<FoodDto> foodDtoList){
         restaurantsService.registerFood(restaurantId, foodDtoList);
+    }
+
+    @GetMapping("/restaurant/{restaurantId}/foods")
+    public List<ShowMenuDto> showFoods(@PathVariable Long restaurantId){
+        return restaurantsService.showFoods(restaurantId);
     }
 
 }
