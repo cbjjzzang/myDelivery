@@ -21,10 +21,10 @@ public class Restaurants {
     private String name;
 
     @Column
-    private Long minOrderPrice;
+    private int minOrderPrice;
 
     @Column
-    private Long deliveryFee;
+    private int deliveryFee;
 
     public Restaurants(RestaurantsDto restaurantsDto){
         this.name = restaurantsDto.getName();

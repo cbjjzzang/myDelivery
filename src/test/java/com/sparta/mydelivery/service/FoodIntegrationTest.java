@@ -105,6 +105,8 @@ class FoodIntegrationTest {
             List<FoodDto> foodsRequest = new ArrayList<>();
             // 음식2 추가
             foodsRequest.add(food2);
+            System.out.println(foodsRequest);
+
 
             String requestBody = mapper.writeValueAsString(foodsRequest);
             HttpEntity<String> request = new HttpEntity<>(requestBody, headers);

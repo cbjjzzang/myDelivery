@@ -26,14 +26,5 @@ public class RestaurantsController {
         return restaurantsService.showRestaurants();
     }
 
-    @PostMapping("/restaurant/{restaurantId}/food/register")
-    public void registerFood(@PathVariable Long restaurantId, @RequestBody List<FoodDto> foodDtoList){
-        restaurantsService.registerFood(restaurantId, foodDtoList);
-    }
-
-    @GetMapping("/restaurant/{restaurantId}/foods")
-    public List<ShowMenuDto> showFoods(@PathVariable Long restaurantId){
-        return restaurantsService.showFoods(restaurantId);
-    }
 
 }

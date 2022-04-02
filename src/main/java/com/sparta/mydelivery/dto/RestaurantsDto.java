@@ -9,6 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RestaurantsDto {
     private String name;
-    private Long minOrderPrice;
-    private Long deliveryFee;
+    private int minOrderPrice;
+    private int deliveryFee;
 }
