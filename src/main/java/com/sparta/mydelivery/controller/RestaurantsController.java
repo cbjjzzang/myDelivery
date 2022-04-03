@@ -1,8 +1,6 @@
 package com.sparta.mydelivery.controller;
 
-import com.sparta.mydelivery.dto.FoodDto;
 import com.sparta.mydelivery.dto.RestaurantsDto;
-import com.sparta.mydelivery.dto.ShowMenuDto;
 import com.sparta.mydelivery.models.Restaurants;
 import com.sparta.mydelivery.service.RestaurantsService;
 import lombok.RequiredArgsConstructor;

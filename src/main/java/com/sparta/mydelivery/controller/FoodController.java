@@ -1,10 +1,9 @@
 package com.sparta.mydelivery.controller;
 
 import com.sparta.mydelivery.dto.FoodDto;
-import com.sparta.mydelivery.dto.ShowMenuDto;
+import com.sparta.mydelivery.models.Food;
 import com.sparta.mydelivery.service.FoodService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class FoodController {
-
 
     private final FoodService foodService;
 
@@ -23,7 +21,7 @@ public class FoodController {
     }
 
     @GetMapping("/restaurant/{restaurantId}/foods")
-    public List<ShowMenuDto> showFoods(@PathVariable Long restaurantId){
+    public List<Food> showFoods(@PathVariable Long restaurantId){
         return foodService.showFoods(restaurantId);
     }
 }

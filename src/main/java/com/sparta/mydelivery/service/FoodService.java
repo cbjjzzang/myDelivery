@@ -1,14 +1,12 @@
 package com.sparta.mydelivery.service;
 
 import com.sparta.mydelivery.dto.FoodDto;
-import com.sparta.mydelivery.dto.ShowMenuDto;
 import com.sparta.mydelivery.models.Food;
 import com.sparta.mydelivery.repository.FoodRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -38,15 +36,8 @@ public class FoodService {
     }
 
     @Transactional
-    public List<ShowMenuDto> showFoods(Long restaurantId) {
-        List<ShowMenuDto> menu = new ArrayList<>();
-        List<Food> foodList = foodRepository.findAllByRestaurantsId(restaurantId);
-
-        for(Food food : foodList){
-            ShowMenuDto showMenuDto = new ShowMenuDto(food.getId(), food.getName(), food.getPrice());
-            menu.add(showMenuDto);
-        }
-        return menu;
+    public List<Food> showFoods(Long restaurantId) {
+        return foodRepository.findAllByRestaurantsId(restaurantId);
     }
 
     public boolean exsistMenu(List<FoodDto> newMenu, Long restaurantId){
