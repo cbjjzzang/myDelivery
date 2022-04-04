@@ -4,6 +4,7 @@ import com.sparta.mydelivery.dto.FoodOrderDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 
 import javax.persistence.*;
 
@@ -27,7 +28,7 @@ public class FoodOrder {
     private int price;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "OrderList_Id")
     private OrderList orderList;
 
     public FoodOrder(FoodOrderDto foodOrderDto){

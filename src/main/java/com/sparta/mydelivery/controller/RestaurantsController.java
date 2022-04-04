@@ -24,5 +24,8 @@ public class RestaurantsController {
         return restaurantsService.showRestaurants();
     }
 
-
+    @GetMapping("/restaurants/available/{x},{y}")
+    public List<Restaurants> availableRestaurants(@PathVariable int x,@PathVariable int y){
+        return restaurantsService.availableRestaurants(x, y);
+    }
 }

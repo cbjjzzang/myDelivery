@@ -6,6 +6,7 @@ import com.sparta.mydelivery.repository.RestaurantsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,4 +28,16 @@ public class RestaurantsService {
         return restaurantsRepository.findAll();
     }
 
+    public List<Restaurants> availableRestaurants(int x, int y) {
+        List<Restaurants> restaurants = restaurantsRepository.findAll();
+        List<Restaurants> availableRestaurants = new ArrayList<>();
+        for(Restaurants restaurant : restaurants){
+            int restaurantX = restaurant.getPositionX();
+            int restaurantY = restaurant.getPositionY();
+            if(Math.abs(restaurantX-x) + Math.abs(restaurantY-y) <= 3){
+                availableRestaurants.add(restaurant);
+            }
+        }
+            return availableRestaurants;
+    }
 }

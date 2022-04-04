@@ -13,4 +13,6 @@ public class OrderRequestDto {
 
     private Long restaurantId;
     private List<FoodOrderRequestDto> foods;
+    private int x;
+    private int y;
 }

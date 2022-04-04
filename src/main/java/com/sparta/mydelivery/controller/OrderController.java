@@ -5,10 +5,7 @@ import com.sparta.mydelivery.models.OrderList;
 import com.sparta.mydelivery.repository.OrderRepository;
 import com.sparta.mydelivery.service.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,12 +17,16 @@ public class OrderController {
 
     @PostMapping("/order/request")
     public OrderList order(@RequestBody OrderRequestDto requestDto) {
-
-        return orderService.readOrders(requestDto);
+        return orderService.saveOrders(requestDto);
     }
 
     @GetMapping("/orders")
     public List<OrderList> readOrders() {
         return orderService.findOrders();
+    }
+
+    @PostMapping("/order/request/{x}/{y}")
+    public OrderList orderDistance(@RequestBody OrderRequestDto requestDto, @PathVariable int x, @PathVariable int y) {
+        return orderService.saveOrdersDistance(requestDto, x, y);
     }
 }
