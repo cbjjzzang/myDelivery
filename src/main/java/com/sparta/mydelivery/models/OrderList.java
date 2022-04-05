@@ -16,17 +16,16 @@ public class OrderList {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String restaurantName;
 
     @OneToMany
-    @JoinColumn
     private List<FoodOrder> foods;
 
-    @Column
+    @Column(nullable = false)
     private int deliveryFee;
 
-    @Column
+    @Column(nullable = false)
     private int totalPrice;
 
     public OrderList(String restaurantName, List<FoodOrder> foods, int deliveryFee, int totalPrice){

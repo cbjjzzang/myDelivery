@@ -167,7 +167,7 @@ class OrderIntegrationTest2 {
 
     @Test
     @Order(4)
-    @DisplayName("주문하기")
+    @DisplayName("주문하기(거리에따른 배달비 추가)")
     void test4() throws JsonProcessingException {
         // given
         Long restaurantId = registeredRestaurant.id;

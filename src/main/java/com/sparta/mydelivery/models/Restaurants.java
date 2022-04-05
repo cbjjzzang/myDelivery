@@ -20,10 +20,10 @@ public class Restaurants {
     @Column
     private String name;
 
-    @Column
+    @Column(nullable = false)
     private int minOrderPrice;
 
-    @Column
+    @Column(nullable = false)
     private int deliveryFee;
 
     @Column

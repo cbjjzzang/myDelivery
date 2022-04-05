@@ -57,7 +57,6 @@ public class OrderService {
         OrderList orderList = new OrderList(restaurantName, foodOrders, deliveryFee, totalPrice);
         orderRepository.save(orderList);
         return orderList;
-
     }
 
     public List<OrderList> findOrders() {

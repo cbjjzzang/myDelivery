@@ -20,7 +20,7 @@ public class FoodService {
 
     @Transactional
     public void registerFood(Long restaurantId, List<FoodDto> foodDtoList) {
-        HashSet<String> foods= new HashSet<>();
+        HashSet<String> foods = new HashSet<>();
         for(FoodDto food : foodDtoList){
             foods.add(food.getName());
         }
